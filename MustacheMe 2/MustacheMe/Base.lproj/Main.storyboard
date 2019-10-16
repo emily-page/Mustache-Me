@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MustacheMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CharlesBarkley" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-gu-Gjy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxp-GN-l6M">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CCC-Fk-qJo"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="clear" id="hHi-VV-D3b">
+                                        <connections>
+                                            <action selector="clearButton:" destination="BYZ-38-t0r" id="LFt-VJ-cdp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="h8d-vs-NHl">
+                                        <connections>
+                                            <action selector="loadImage:" destination="BYZ-38-t0r" id="p2w-uZ-TL6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mustache" translatesAutoresizingMaskIntoConstraints="NO" id="596-Uq-TPs">
+                                <rect key="frame" x="37" y="152" width="162" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Tzp-WQ-cy7" appends="YES" id="64s-8Y-Cn1"/>
+                                    <outletCollection property="gestureRecognizers" destination="8FH-cS-daM" appends="YES" id="t1B-Qh-fNV"/>
+                                    <outletCollection property="gestureRecognizers" destination="kV0-MM-iIJ" appends="YES" id="YC7-iZ-cXh"/>
+                                    <outletCollection property="gestureRecognizers" destination="bL9-xA-KM3" appends="YES" id="aCW-i5-vMq"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nxp-GN-l6M" firstAttribute="top" secondItem="prZ-gu-Gjy" secondAttribute="bottom" id="SIS-FU-gXh"/>
+                            <constraint firstItem="prZ-gu-Gjy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UkB-fC-yXk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nxp-GN-l6M" secondAttribute="bottom" id="VfJ-Ht-kjI"/>
+                            <constraint firstItem="nxp-GN-l6M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VsG-8X-VOR"/>
+                            <constraint firstItem="prZ-gu-Gjy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bWM-jX-N4G"/>
+                            <constraint firstAttribute="trailing" secondItem="prZ-gu-Gjy" secondAttribute="trailing" id="cet-eg-qjS"/>
+                            <constraint firstAttribute="trailing" secondItem="nxp-GN-l6M" secondAttribute="trailing" id="nfU-zZ-cne"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mustacheImageView" destination="596-Uq-TPs" id="cy1-vk-QZk"/>
+                        <outlet property="myImageView" destination="prZ-gu-Gjy" id="tct-5R-TAH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Tzp-WQ-cy7">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="HSI-38-b0d"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="8FH-cS-daM">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="ZDg-vu-fiK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="kV0-MM-iIJ">
+                    <connections>
+                        <action selector="pinchGesture:" destination="BYZ-38-t0r" id="5uG-t1-DXn"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="bL9-xA-KM3">
+                    <connections>
+                        <action selector="rotateGesture:" destination="BYZ-38-t0r" id="TIn-qM-eoX"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="380" y="304.4977511244378"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CharlesBarkley" width="420" height="517"/>
+        <image name="Mustache" width="264" height="191"/>
+    </resources>
+</document>
